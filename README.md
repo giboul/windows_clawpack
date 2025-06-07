@@ -1,17 +1,19 @@
-# Installation de clawpack sur Windows avec WSL
+# Installing Clawpack on windows with WSL
 
-## 1. Installation de WSL
-Dans l'invite de commandes `cmd` (taper `cmd` dans le menu 'Démarrer') puis installer une instance d'Ubuntu en exécutant la ligne ci-dessous : 
+## 1. Install WSL
+Open your command prompt and type the following to create an Ubuntu instance on your machine : 
 
 ```powershell
 wsl --install -d Ubuntu
 ```
 
-Il faudra définir un nom d'utilisaeur et un mot de passe admin à réutiliser par la suite.
+You will have to define a username and a password that you should not forget.
 
-## 2. Installation des paquets Fortran et Python nécessaires
+See the tutorial online: [https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install).
 
-Exécuter le code ci-dessous pour installer tous les codes requis pour installer et utiliser clawpack dans un environnement virtuel de Python.
+## 2. Install dependencies
+
+Execute the following in your bash sell from WSL to install the Fortran compiler, the make tools and python tools for virtual environements.
 
 ```bash
 sudo apt-get update
@@ -21,6 +23,11 @@ sudo apt-get install gfortran
 sudo apt install liblapack-dev libopenblas-dev
 sudo apt-get install python3 python3-venv
 sudo apt-get install python3-dev
+```
+
+Then create your virtual environment and install all necessary packages.
+
+```bash
 python3 -m venv claw
 export CLAW=$PWD/claw/src/clawpack
 echo "export CLAW=$CLAW" >> $PWD/claw/bin/activate
@@ -35,16 +42,8 @@ pip install matplotlib
 pip install --no-build-isolation -e git+https://github.com/clawpack/clawpack.git@v5.11.0#egg=clawpack
 ```
 
-## 3. Terminal WSL dans VSCode
+## 3. Open a project in VScode with WSL
 
-Ouvrir un dossier quelconque dans `\\wsl.localhost\Ubuntu\home\<nom d'utilisateur>` et ouvrir un terminal. En cas normal, le terminal est déjà en WSL par défaut. Sinon, aller en haut à droite de la fenêtre du terminal pour en ouvrir un nouveau mais en WSL. Il faut bien activer l'environnement virtuel avec `source chemin_vers_environnement_claw/bin/activate` (comme dans le script précédent) pour pouvoir utiliser clawpack.
+You can find the official tutorials online: [https://learn.microsoft.com/en-us/training/modules/developing-in-wsl/?source=recommendations](https://learn.microsoft.com/en-us/training/modules/developing-in-wsl/?source=recommendations).
 
-# Éxécuter un exemple
-
-```bash
-source claw/bin/activate
-cd $CLAW/geoclaw/examples/tsunami/chile2010
-make new
-make topo make data
-make output
-```
+Open any folder in `\\wsl.localhost\Ubuntu\home\<nom d'utilisateur>` and open a terminal. It should run with WSL by default. If it is not the cas, open a new one and specify 'Ubuntu (WSL)'. Be sure to activate your virtual environment `source path_to_claw_venv/bin/activate` before running clawpack.
