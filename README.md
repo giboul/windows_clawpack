@@ -46,4 +46,4 @@ pip install --no-build-isolation -e git+https://github.com/clawpack/clawpack.git
 
 You can find the official tutorials online: [https://learn.microsoft.com/en-us/training/modules/developing-in-wsl/?source=recommendations](https://learn.microsoft.com/en-us/training/modules/developing-in-wsl/?source=recommendations).
 
-Open any folder in `\\wsl.localhost\Ubuntu\home\<username>` and open a terminal. It should run with WSL by default. If it is not the cas, open a new one and specify 'Ubuntu (WSL)'. Be sure to activate your virtual environment `source path_to_claw_venv/bin/activate` before running clawpack.
+Open any folder in `\\wsl.localhost\Ubuntu\home\<username>` and open a terminal. It should run with WSL by default. If it is not the case, open a new one and specify 'Ubuntu (WSL)'. Be sure to activate your virtual environment `source path_to_claw_venv/bin/activate` before running clawpack.
