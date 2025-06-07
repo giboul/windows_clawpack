@@ -16,4 +16,4 @@ pip install ninja
 pip install pkgconfig
 pip install scipy
 pip install matplotlib
-pip install --no-build-isolation -e git+https://github.com/clawpack/clawpack.git@v5.11.0#egg=clawpack
+pip install --no-build-isolation -e git+https://github.com/clawpack/clawpack.git@v5.12.0#egg=clawpack
