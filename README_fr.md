@@ -14,13 +14,13 @@ Il faudra définir un nom d'utilisaeur et un mot de passe admin à réutiliser p
 Exécuter le code ci-dessous pour installer tous les codes requis pour installer et utiliser clawpack dans un environnement virtuel de Python.
 
 ```bash
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install make
-sudo apt-get install gfortran
+sudo apt update
+sudo apt upgrade
+sudo apt install make
+sudo apt install gfortran
 sudo apt install liblapack-dev libopenblas-dev
-sudo apt-get install python3 python3-venv
-sudo apt-get install python3-dev
+sudo apt install python3 python3-venv
+sudo apt install python3-dev
 python3 -m venv claw
 export CLAW=$PWD/claw/src/clawpack
 echo "export CLAW=$CLAW" >> $PWD/claw/bin/activate
